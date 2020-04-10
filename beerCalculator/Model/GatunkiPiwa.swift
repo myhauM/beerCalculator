@@ -17,6 +17,7 @@ struct GatunkiPiwa {
         GatunekPiwa(nazwaStylu: "Amerykańskie ale, Lagery", dolnaGranicaNagazowania: 2.2, gornaGranicaNagazowania: 2.7),
         GatunekPiwa(nazwaStylu: "Niemieckie pszczeniczne", dolnaGranicaNagazowania: 3.2, gornaGranicaNagazowania: 3.6)
     ]
+    
     func getBeerStyle(for nazwa: String) {
        
     }
@@ -30,7 +31,7 @@ struct GatunkiPiwa {
     func liczenieAlkoholu(gestoscPoczatkowa: Double, gestoscKoncowa: Double) -> Double {
         return ((gestoscPoczatkowa-gestoscKoncowa)/1.938)
     }
-    
+   
     func liczymyNagazowanie (surowiec: Int, stylGora: Float, stylDol: Float, ilosc: Double, temperatura: Double) -> String {
         var masaCukru = 0
         if surowiec == 0 {

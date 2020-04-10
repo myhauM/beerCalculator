@@ -57,9 +57,12 @@ class NagazowanieViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func obliczButtonPressed(_ sender: UIButton) {
-        
-        let iloscConv: Double? = Double(iloscDoPakowania.text!)
-        let tempConv: Double? = Double(temperaturaDoPakowania.text!)
+        let iloscKropka = iloscDoPakowania.text!.replace(target: ",", withString: ".")
+        let tempKropka = temperaturaDoPakowania.text!.replace(target: ",",withString: ".")
+        let iloscConv: Double? = Double(iloscKropka)
+        let tempConv: Double? = Double(tempKropka)
+//        let iloscConv: Double? = Double(iloscDoPakowania.text!)
+//        let tempConv: Double? = Double(temperaturaDoPakowania.text!)
         
         if let safeIlosc = iloscConv, let safeTemp = tempConv {
             wynikNagazowanieLabel.text = stylePiwne.liczymyNagazowanie(surowiec: surowiecIndex, stylGora: gornaGranica, stylDol: dolnaGranica, ilosc: safeIlosc, temperatura: safeTemp)
